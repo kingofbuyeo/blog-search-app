@@ -1,0 +1,57 @@
+server:
+  shutdown: graceful
+  compression:
+    enabled: true
+
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driverClassName: org.h2.Driver
+    hikari:
+      jdbc-url: jdbc:h2:mem:blog?&profileSql=true&maxQuerySizeToLog=999999
+      username: sa
+      password:
+      minimum-idle: 5
+      maximum-pool-size: 5
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+        default_batch_fetch_size: 1000
+        dialect: org.hibernate.dialect.H2Dialect
+        batch_versioned_data: true
+        order_inserts: true
+        order_updates: true
+        jdbc:
+          batch_size: 100
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+logging:
+  level:
+    root: INFO
+    com.zaxxer.hikari.HikariConfig: DEBUG
+    com.zaxxer.hikari: TRACE
+
+
+springdoc:
+  swagger-ui:
+    tagsSorter: alpha
+    operationsSorter: method
+
+
+openApi:
+  kakao:
+    url: https://dapi.kakao.com/v2/search/blog
+    apiKey: 05c098abefc2cfbc9ecd63c9d40bc17d
+  naver:
+    url: https://openapi.naver.com/v1/search/blog.json
+    apiKey: A1zwRk_iDb4hSOt0msoF
+    secret: yzOwWSanbN
