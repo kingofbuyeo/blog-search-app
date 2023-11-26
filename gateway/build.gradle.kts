@@ -14,7 +14,6 @@ dependencies {
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-webflux")
-    kapt("org.springframework.boot:spring-boot-configuration-processor")
     implementation ("com.h2database:h2")
     implementation ("org.springframework.boot:spring-boot-starter-jdbc")
     runtimeOnly("com.mysql:mysql-connector-j:8.0.32")
