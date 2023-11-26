@@ -51,7 +51,7 @@ Execute Jar 파일 다운로드 Link
 
 ## 1.1 호스트 주소
 
-1. Executor jar 사용한경우 http://localhost:8080을 host 주소로 사용함
+1. Executor jar 사용한경우 http://localhost:8080으로 host 주소로 사용함
 
 ## 1.2 응답 규격
 
