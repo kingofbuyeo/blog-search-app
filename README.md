@@ -1,6 +1,6 @@
 # 오픈 API를 활용한 검색 어플리케이션
 
-[Execute Jar 파일 다운로드 Link](https://github.com/kingofbuyeo/blog-search-app/blob/master/blog-search-app.jar)
+[Execute Jar 파일 다운로드 Link](https://drive.google.com/file/d/1_jtvSI6r-_D9vMNXgDYZOC2u5DddOctQ/view?usp=drive_link)
 
 # 1. 모듈 구조
 
