@@ -4,8 +4,6 @@ plugins {
 dependencies {
     implementation(project(":gateway"))
     implementation(project(":config"))
-    implementation(project(":usecase"))
-    implementation(project(":core"))
     implementation("org.springframework.boot:spring-boot-starter")
     testImplementation(project(":usecase"))
     testImplementation(project(":config"))
