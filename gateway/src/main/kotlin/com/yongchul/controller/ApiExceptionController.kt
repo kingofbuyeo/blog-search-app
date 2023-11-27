@@ -4,6 +4,7 @@ import org.slf4j.LoggerFactory
 import org.springframework.http.HttpStatus
 import org.springframework.validation.BindingResult
 import org.springframework.web.bind.MethodArgumentNotValidException
+import org.springframework.web.bind.MissingServletRequestParameterException
 import org.springframework.web.bind.annotation.ExceptionHandler
 import org.springframework.web.bind.annotation.ResponseStatus
 import org.springframework.web.bind.annotation.RestControllerAdvice
@@ -15,9 +16,9 @@ class ApiExceptionController {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(value = [IllegalArgumentException::class])
     fun handleConnectionNotFoundException(e: IllegalArgumentException): ErrorRes {
-        return ErrorRes(400000, e.message)
+        return ErrorRes(4000000, e.message)
     }
-
+// ,
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(value = [MethodArgumentNotValidException::class])
     fun handleMethodArgumentNotValidException(e: MethodArgumentNotValidException): ErrorRes {
@@ -34,6 +35,16 @@ class ApiExceptionController {
             builder.append("].")
         }
 
+        return ErrorRes(4000000, builder.toString())
+    }
+
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(value = [MissingServletRequestParameterException::class])
+    fun handleMethodArgumentNotValidException(e: MissingServletRequestParameterException): ErrorRes {
+        val builder = StringBuilder()
+            builder.append("[")
+            builder.append(e.parameterName)
+            builder.append("](은)는 필수값입니다.")
         return ErrorRes(4000000, builder.toString())
     }
 

@@ -1,6 +1,6 @@
 # 오픈 API를 활용한 검색 어플리케이션
 
-[Execute Jar 파일 다운로드 Link](https://drive.google.com/file/d/1_jtvSI6r-_D9vMNXgDYZOC2u5DddOctQ/view?usp=drive_link)
+[Execute Jar 파일 다운로드 Link](https://drive.google.com/file/d/1I3Uqo8RfV3wXwmI1k8_YOeB2G2jda7xo/view?usp=sharing)
 - [다운로드가 안되는 경우 github blog-search-app.jar 파일 경로](https://github.com/kingofbuyeo/blog-search-app/blob/master/blog-search-app.jar) 
 
 # 1. 모듈 구조
@@ -52,14 +52,24 @@
 
 ## 1.1 호스트 주소
 
-1. Executor jar 사용한경우 http://localhost:8080으로 host 주소로 사용함
+1. Executor jar 사용한경우 http://localhost:8080을 host 주소로 사용함
 
 ## 1.2 응답 규격
 
-| HTTP Status | 200 (성공시)
-400 (파라미터 오류)
-500 (서버 오류) |
+| HTTP Status | 설명 |
 | --- | --- |
+| 200 | API 호출 성공 |
+| 400 | 4000000 : 유효하지 않은 파라미터로 호출한경우 응답 |
+| 500 | 5000000 : 서버에러가 발생한경우 응답 |
+
+### 1.2.1 응답 예시
+
+```json
+{
+    "code": 4000000,
+    "message": "[query](은)는 필수값입니다."
+}
+```
 
 # 2. API 리스트
 
@@ -100,24 +110,24 @@ ACCURACY : 검색 정확도순 정렬 | X |
 
 ```json
 {
-    "totalCount": 11702,
-    "hasNext": true,
-    "items": [
-        {
-            "title": "토스",
-            "contents": "토스 기업정보 https://toss.im/ 토스 금융의 모든 것, 토스에서 쉽고 간편하게 toss.im *나무위키 - 기본 정보 https://namu.wiki/w/%ED%86%A0%<b>EC</b>%8A%A4(%<b>EA</b>%<b>B</b><b>8%</b><b>88%</b><b>EC</b>%<b>9C</b>%<b>B5</b> 토스(금융) - 나무위키 2022년 02월 09일 기준 학생학자금 이자 지원받기숨은 장학금 찾기학자금대출 계산기국가장학금 계산기사장님내 매출...",
-            "link": "https://connect-thedots.tistory.com/32",
-            "blogName": "비즈니스 모델 아카이빙",
-            "createdAt": "2023-09-18T12:08:04"
-        },
-        {
-            "title": "[주식 공부] 콜옵션, 풋옵션 쉽게 이해하기",
-            "contents": "이득) * 더 자세한 설명과 이해는 관련 링크 참조 이런 정보는 어떠신가요? ⏬⏬⏬ 관련 링크 [나무위키 - 옵션(금융)] https://namu.wiki/w/%<b>EC</b>%98%<b>B</b>5%<b>EC</b>%85%98(%<b>EA</b>%<b>B</b><b>8%</b><b>88%</b><b>EC</b>%<b>9C</b>%<b>B5</b>)#s-4.1.1 옵션(금융) - 나무위키 만기시점에서 옵션의 가치는 다음과 같다. 콜옵션(조기상환권) 매수: Max{0, S - K}풋옵션(조기상환청구권...",
-            "link": "https://invest-in-best.tistory.com/11",
-            "blogName": "INVEST in BEST",
-            "createdAt": "2023-07-29T17:37:18"
-        }
-    ]
+  "totalCount": 11702,
+  "hasNext": true,
+  "items": [
+    {
+      "title": "토스",
+      "contents": "토스 기업정보 https://toss.im/ 토스 금융의 모든 것, 토스에서 쉽고 간편하게 toss.im *나무위키 - 기본 정보 https://namu.wiki/w/%ED%86%A0%<b>EC</b>%8A%A4(%<b>EA</b>%<b>B</b><b>8%</b><b>88%</b><b>EC</b>%<b>9C</b>%<b>B5</b> 토스(금융) - 나무위키 2022년 02월 09일 기준 학생학자금 이자 지원받기숨은 장학금 찾기학자금대출 계산기국가장학금 계산기사장님내 매출...",
+      "link": "https://connect-thedots.tistory.com/32",
+      "blogName": "비즈니스 모델 아카이빙",
+      "createdAt": "2023-09-18T12:08:04"
+    },
+    {
+      "title": "[주식 공부] 콜옵션, 풋옵션 쉽게 이해하기",
+      "contents": "이득) * 더 자세한 설명과 이해는 관련 링크 참조 이런 정보는 어떠신가요? ⏬⏬⏬ 관련 링크 [나무위키 - 옵션(금융)] https://namu.wiki/w/%<b>EC</b>%98%<b>B</b>5%<b>EC</b>%85%98(%<b>EA</b>%<b>B</b><b>8%</b><b>88%</b><b>EC</b>%<b>9C</b>%<b>B5</b>)#s-4.1.1 옵션(금융) - 나무위키 만기시점에서 옵션의 가치는 다음과 같다. 콜옵션(조기상환권) 매수: Max{0, S - K}풋옵션(조기상환청구권...",
+      "link": "https://invest-in-best.tistory.com/11",
+      "blogName": "INVEST in BEST",
+      "createdAt": "2023-07-29T17:37:18"
+    }
+  ]
 }
 ```
 
@@ -147,29 +157,29 @@ ACCURACY : 검색 정확도순 정렬 | X |
 
 ```json
 {
-    "hasNext": false,
-    "items": [
-        {
-            "keyword": "카카오",
-            "count": 6
-        },
-        {
-            "keyword": "금융",
-            "count": 5
-        },
-        {
-            "keyword": "영화",
-            "count": 4
-        },
-        {
-            "keyword": "꽃",
-            "count": 3
-        },
-        {
-            "keyword": "면접",
-            "count": 3
-        }
-    ]
+  "hasNext": false,
+  "items": [
+    {
+      "keyword": "카카오",
+      "count": 6
+    },
+    {
+      "keyword": "금융",
+      "count": 5
+    },
+    {
+      "keyword": "영화",
+      "count": 4
+    },
+    {
+      "keyword": "꽃",
+      "count": 3
+    },
+    {
+      "keyword": "면접",
+      "count": 3
+    }
+  ]
 }
 ```
 
