@@ -87,9 +87,7 @@
 | query | String | Kakao 검색 수행될 경우 블로그 URL + “ “(공백)을 구분자로 넣어서 특정 블로그만 검색 수행가능 | O |
 | page | Number | 기본적으로 1~50의 값을 제공하고 50이상인경우 Naver 블로그 검색이 수행됨. | X |
 | pageSize | Number | 한 페이지에 보여질 문서의 수 1~50 사이의 값, 기본 50 | X |
-| ordering | String | 결과 문서 정렬 방식, 기본값 ACCURACY
-RECENT : 최신순 정렬
-ACCURACY : 검색 정확도순 정렬 | X |
+| ordering | String | 결과 문서 정렬 방식, 기본값 ACCURACY (RECENT : 최신순 정렬, ACCURACY : 검색 정확도순 정렬) | X |
 - Response
 
 | 이름 | 타입 | 설명 |
